@@ -1,0 +1,258 @@
+/* Pagrindinė užd */
+
+body {
+  font-family: "Edwardian Script", cursive;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f2ecf5;
+}
+
+h1 {
+  font-size: 2.8em;
+  color: #dd402c;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2.4em;
+  color: #962cdd;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 2em;
+  color: #2c9bdd;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 1.6em;
+  color: #7a65b3;
+  font-weight: 550;
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1em;
+  color: #cccccc;
+  margin-bottom: 7px;
+}
+
+/* "Mygtukų (Buttons) stiliai" */
+.btn-getstarted,
+.profile-actions .btn-primary,
+.profile-actions .btn-secondary {
+    background-color: #7d65b3 !important;
+    color: #ffffff !important;
+    border: 2px solid #7d65b3;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+/* Mygtukų Hover (užvedimas) / Active (paspaudimas) stiliai */
+.btn-getstarted:hover,
+.profile-actions .btn-primary:hover,
+.profile-actions .btn-secondary:hover {
+    background-color: #5d4593 !important;
+    border-color: #5d4593;
+}
+
+/* Nuorodos (bendras stilius) */
+a {
+    color: #ff8a65;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Nuorodos Hover (užvedimas) / Active (paspaudimas) stiliai */
+a:hover,
+a:active {
+    color: #ffb899;
+    text-decoration: underline;
+}
+
+/* Vienodi tarpai sekcijose, taikoma About, Resume, Services, Portfelio sekcijoms */
+#about, #resume, #portfolio {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Stiliai pagrindiniams turinio blokams sekcijose */
+.profile-card,
+.bio-section,
+.detail-item,
+.exp-card,
+.timeline-content,
+.portfolio-card {
+    
+    /* Kraštinės */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Užapvalinimas */
+    border-radius: 12px;
+    
+    /* Šešėlis */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    
+    /* Vidinė erdvė */
+    padding: 20px; 
+    
+    background-color: rgba(25, 25, 25, 0.7);
+}
+
+/* Resume sekcija*/
+.experience-section,
+.education-section {
+    padding: 0 15px;
+}
+
+.experience-cards {
+    margin-top: 20px;
+}
+
+
+.portfolio-card {
+    padding: 0;
+}
+
+/* Portfelis */
+.isotope-item {
+    padding: 10px;
+}
+
+/* "Atgal į viršų" mygtuko stiliai */
+#scroll-top {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background: #7d65b3;
+    color: #fff;
+    border: black;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    right: 1.7rem;
+    bottom: 1.7rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+}
+
+#scroll-top i {
+    font-size: 1.5rem;
+}
+
+#scroll-top:hover {
+    background: #5d4593;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    transform: translateY(-3px);
+}
+
+#scroll-top:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+#scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Papildoma užd */
+
+/* Pabraukimai navigacijos meniu */
+.list-unstyled,
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+ul li,
+ol li {
+    display: block;
+    padding: 0.45rem 0 0.35rem 0;
+    margin: 0 0 0.6rem 0;
+    border-bottom: 2px solid rgba(125,101,179,0.12);
+    color: #e8e2ea;
+}
+
+ul li:hover,
+ol li:hover {
+    border-bottom-color: #7d65b3;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+    margin-left: 1.2rem;
+}
+
+ul ul li,
+ol ol li,
+ul ol li,
+ol ul li {
+    border-bottom-color: rgba(255,184,153,0.08);
+}
+
+/* Bendras lentelės stilius */
+.services-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.services-table th, 
+.services-table td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px; 
+    text-align: center;
+    vertical-align: middle;
+}
+
+.services-table thead tr {
+    background-color: #5d4593;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.services-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.services-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Duomenų eilutės stilius */
+.services-table tbody tr {
+    color: #cccccc;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.services-table .col-name {
+    width: 25%;
+}
+.services-table .col-description {
+    width: 50%;
+}
+.services-table .col-price {
+    width: 25%;
+    font-weight: bold;
+    color: #ff8a65;
+}
