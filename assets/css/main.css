@@ -1739,7 +1739,6 @@ section,
 
 .services .service-item:hover {
   border-color: var(--accent-color);
-  transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
@@ -1759,6 +1758,10 @@ section,
 
 .services .service-item:hover .read-more i {
   transform: translateX(5px);
+}
+
+.services .service-item:hover .service-card-inner {
+  transform: translateY(-5px);
 }
 
 .services .service-item.featured {

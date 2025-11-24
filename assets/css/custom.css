@@ -256,3 +256,126 @@ ol ul li {
     font-weight: bold;
     color: #ff8a65;
 }
+
+/* CSS Animacijos */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeInUp 800ms ease-in-out both;
+}
+
+/* Medijų ikonų šokinėjimas */
+@keyframes float-slow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.social-icon { display:inline-block; animation: float-slow 2.6s ease-in-out infinite; }
+
+#preloader {
+    position: fixed; inset: 0; z-index: 9999; display: flex; flex-direction: column; align-items:center; justify-content:center;
+    background: linear-gradient(180deg, rgba(8,8,8,0.96), rgba(30,30,30,0.96));
+    color: #fff;
+    pointer-events: auto;
+    opacity: 1;
+    transition: opacity 600ms ease, visibility 600ms ease;
+    animation: preloader-hide 3.5s ease-in-out 1 both;
+}
+.preloader-spinner {
+    width: 54px; height: 54px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.12); border-top-color: #7d65b3; box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    animation: spin 1.1s linear infinite;
+}
+.preloader-dots { display:flex; gap:8px; margin-top:12px; }
+.preloader-dots span { display:block; width:10px; height:10px; border-radius:50%; background:#7d65b3; opacity:0.6; animation: dots-pulse 1.2s ease-in-out infinite; }
+.preloader-dots span:nth-child(2) { animation-delay: 150ms; }
+.preloader-dots span:nth-child(3) { animation-delay: 300ms; }
+
+@keyframes spin { from{ transform: rotate(0deg); } to{ transform: rotate(360deg); } }
+@keyframes dots-pulse { 0% { transform: translateY(0); opacity:0.5 } 50% { transform: translateY(-6px); opacity:1 } 100% { transform: translateY(0); opacity:0.5 } }
+
+@keyframes preloader-hide { 0% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in, .social-icon, .preloader-spinner, .preloader-dots span { animation: none !important; }
+    #preloader { display: none !important; }
+}
+
+/* Animuotas Gradientas */
+#services {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    z-index: 0;
+}
+#services {
+    background: linear-gradient(120deg, #7d65b3 0%, #b44aa0 34%, #dd402c 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 35s linear infinite; /* remove pulsing to improve readability */
+    filter: saturate(1.05) brightness(0.98);
+}
+.services .service-item { background: rgba(18,18,18,0.92); border-color: rgba(255,255,255,0.06); box-shadow: 0 8px 28px rgba(0,0,0,0.5); }
+#services > .container { position: relative; z-index: 2; }
+#services::after { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(0,0,0,0.38); pointer-events: none; }
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes gradientPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #services { animation: none !important; }
+}
+
+/* Dekoratyvinės figūros */
+#about { position: relative; overflow: visible; }
+.about-shapes { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.about .container { position: relative; z-index: 1; }
+.about-shapes .shape { position: absolute; pointer-events: none; opacity: 0.95; }
+
+.shape-note { font-size: 200px; left: 3%; top: 3%; color: rgba(125,101,179,0.30); animation: floatSlow 9s ease-in-out infinite; transform-origin: center; }
+
+.shape-list { font-size: 180px; right: 4%; top: 6%; color: rgba(180,74,160,0.22); animation: floatRotate 11s linear infinite; transform-origin: center; }
+
+.shape-treble { font-size: 300px; left: 50%; transform: translateX(-50%); bottom: -4%; color: rgba(221,64,44,0.28); animation: floatSlow 10s ease-in-out infinite; line-height:1; }
+
+@keyframes floatSlow { 0%{ transform: translateY(0) } 50%{ transform: translateY(-12px) } 100%{ transform: translateY(0) } }
+@keyframes floatRotate { 0%{ transform: translateY(0) rotate(0deg) } 50%{ transform: translateY(-14px) rotate(10deg) } 100%{ transform: translateY(0) rotate(0deg) } }
+
+.shape-circle { animation-name: floatSlow, tinyRotate; animation-duration: 8s, 24s; animation-iteration-count: infinite, infinite; animation-timing-function: ease-in-out, linear; }
+@keyframes tinyRotate { 0%{ transform: translateY(0) rotate(0deg);} 50%{ transform: translateY(-8px) rotate(5deg); } 100%{ transform: translateY(0) rotate(0deg);} }
+
+@media (prefers-reduced-motion: reduce) {
+    .about-shapes .shape { animation: none !important; }
+}
+
+@media (max-width: 720px) {
+    .about-shapes .shape { display: none; }
+}
+
+@keyframes sway1 { 0% { transform: translateX(-6px); } 50% { transform: translateX(6px); } 100% { transform: translateX(-6px); } }
+@keyframes sway2 { 0% { transform: translateX(-12px); } 50% { transform: translateX(12px); } 100% { transform: translateX(-12px); } }
+@keyframes sway3 { 0% { transform: translateX(-4px); } 50% { transform: translateX(4px); } 100% { transform: translateX(-4px); } }
+@keyframes sway4 { 0% { transform: translateX(-10px); } 50% { transform: translateX(10px); } 100% { transform: translateX(-10px); } }
+.services .service-item.sway-1 { animation: sway1 11s ease-in-out infinite; will-change: transform; }
+.services .service-item.sway-2 { animation: sway2 14s ease-in-out infinite; will-change: transform; }
+.services .service-item.sway-3 { animation: sway3 10s ease-in-out infinite; will-change: transform; }
+.services .service-item.sway-4 { animation: sway4 13s ease-in-out infinite; will-change: transform; }
+
+.services .service-card-inner { display:block; }
+
+@media (prefers-reduced-motion: reduce) {
+    .services .service-card-inner { animation: none !important; }
+}
+
+@media (max-width: 720px) {
+    .services .service-card-inner { animation: none !important; }
+}

@@ -39,6 +39,12 @@
 </head>
 
 <body class="index-page">
+  <div id="preloader" role="status" aria-label="Puslapio krovimas">
+    <div class="preloader-spinner" aria-hidden="true"></div>
+    <div class="preloader-dots" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
@@ -85,10 +91,9 @@
 
   <main class="main">
 
-    <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/profile/main-profilis.jpg" alt="" data-aos="fade-in">
+      <img src="assets/img/profile/main-profilis.jpg" alt="Mykolas Gabrėnas - portretas" data-aos="fade-in">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row justify-content-center">
@@ -96,24 +101,30 @@
             <h2>Mykolas Gabrėnas</h2>
             <p>Aš esu <span class="typed" data-typed-items="busimas Elektronikos inžinierius, Menininkas, Dailidė"></span><span class="typed-cursor" aria-hidden="true"></span></p>
             <div class="social-links">
-              <a href="#"><i class="bi bi-facebook"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-facebook social-icon"></i></a>
+              <a href="#"><i class="bi bi-linkedin social-icon"></i></a>
             </div>
           </div>
         </div>
       </div>
 
-    </section><!-- /Hero Section -->
+    </section>
 
-    <!-- About Section -->
+    <!-- Apie -->
     <section id="about" class="about section">
+      <!-- Dekoracijos -->
+      <div class="about-shapes" aria-hidden="true">
+        <i class="shape shape-note bi bi-music-note-beamed" aria-hidden="true"></i>
+        <span class="shape shape-treble" aria-hidden="true">𝄞</span>
+        <i class="shape shape-list bi bi-music-note-list" aria-hidden="true"></i>
+      </div>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <!-- Apie -->
+      <div class="container section-title fade-in" data-aos="fade-up">
         <span class="subtitle">Apie mane</span>
         <h2>Truputis apie mane</h2>
         <p>Aš esu žmogus siekiantis tikslo ir jį įvykdantis. Esu labai kruopštus draugiškas, motivuotas tobulėti, dėmesingas darbe (ne teorijoje).   </p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -122,7 +133,7 @@
             <div class="profile-card">
               <div class="profile-header">
                 <div class="profile-avatar">
-                  <img src="assets/img/profile/profilis.png" class="img-fluid" alt="">
+                  <img src="assets/img/profile/profilis.png" class="img-fluid" alt="Mykolas Gabrėnas - profilio nuotrauka">
                   <div class="status-indicator"></div>
                 </div>
                 <h3>Mykolas Gabrėnas</h3>
@@ -142,8 +153,8 @@
               </div>
 
               <div class="social-connect">
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-                <a href="#"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin social-icon"></i></a>
+                <a href="#"><i class="bi bi-github social-icon"></i></a>
               </div>
             </div>
           </div>
@@ -212,21 +223,20 @@
 
       </div>
 
-    </section><!-- /About Section -->
+    </section>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <!-- Aprašymas -->
+      <div class="container section-title fade-in" data-aos="fade-up">
         <span class="subtitle">Aprašymas</span>
         <h2>Aprašymas</h2>
-      </div><!-- End Section Title -->
+      </div>
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume"><!-- Resume Section -->
+    <section id="resume" class="resume">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
 
     <div class="row gy-5">
 
-      <!-- LEFT: Experience -->
+      <!-- Kairė: Patirtis -->
       <div class="col-lg-6">
         <section class="experience-section">
           <header class="section-header" data-aos="fade-right" data-aos-delay="200">
@@ -293,7 +303,7 @@
         </section>
       </div>
 
-      <!-- RIGHT: Education (icons removed) -->
+      <!-- Dešinė: Išsilavinimas -->
       <div class="col-lg-6">
         <section class="education-section">
           <header class="section-header" data-aos="fade-left" data-aos-delay="200">
@@ -330,25 +340,24 @@
                 </div>
               </article>
 
-            </div><!-- /.timeline-track -->
-          </div><!-- /.education-timeline -->
+            </div>
+          </div>
         </section>
       </div>
 
-    </div><!-- /.row -->
+    </div>
 
-  </div><!-- /.container -->
-</section><!-- /Resume Section -->
+  </div>
+</section>
 
-    <!-- Services Section -->
+    <!-- Paslaugos -->
     <section id="services" class="services section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title fade-in" data-aos="fade-up">
         <span class="subtitle">Paslaugos</span>
         <h2>Paslaugos</h2>
         <p>Užduoties reikalavimai</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -357,16 +366,19 @@
           <p>Čia galite pamatyti vaizdo ir garso įrašų pavyzdžius.</p>
         </div>
 
-        <!-- a) Vaizdo įrašas iš Pexels -->
-        <div class="service-item">
+        <!-- a) Vaizdo įrašas -->
+        <div class="service-item fade-in sway-1">
+          <div class="service-card-inner">
           <h3>Vaizdo įrašas iš Pexels</h3>
           <video width="640" height="360" controls>
             <source src="assets/media/vidosas.mp4" type="video/mp4">
           </video>
+          </div>
         </div>
 
         <!-- b) YouTube įrašas -->
-        <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item fade-in sway-2" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card-inner">
           <h3>YouTube vaizdo įrašas</h3>
           <iframe width="640" height="360"
             src="https://www.youtube.com/embed/BoUVIhtqjAw"
@@ -374,18 +386,22 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
+          </div>
         </div>
         
         <!-- c) Garso įrašas -->
-        <div class="service-item">
+        <div class="service-item fade-in sway-3">
+          <div class="service-card-inner">
           <h3>Garso įrašas</h3>
           <audio controls>
             <source src="assets/media/tiksejimas.mp3" type="audio/mpeg">
           </audio>
+          </div>
         </div>
 
-        <!-- d) Services lentelė -->
-        <div class="service-item" data-aos="fade-up" data-aos-delay="150">
+        <!-- d) Paslaugų lentelė -->
+        <div class="service-item fade-in sway-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="service-card-inner">
           <h3>Paslaugų lentelė</h3>
           <table class="services-table" aria-label="Paslaugos">
             <thead>
@@ -417,25 +433,24 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
 
       </div>
 
-    </section><!-- /Services Section -->
+    </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfelis -->
     <section id="portfolio" class="portfolio section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title fade-in" data-aos="fade-up">
         <span class="subtitle">Portfelis</span>
         <h2>Portfelis</h2>
         <p>Darbų galerija</p>
-      </div><!-- End Section Title -->
+      </div>
 
 <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-  <!-- Isotope wrapper -->
   <div class="isotope-layout" data-default-filter="*" data-layout="fitRows" data-sort="original-order">
     <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
       <li data-filter="*" class="filter-active">Visi darbai</li>
@@ -445,10 +460,8 @@
       <li data-filter=".filter-MatLab">MatLab</li>
     </ul>
 
-    <!-- Grid (Bootstrap controls columns; Isotope filters items) -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
 
-      <!-- === ITEM (copy this whole .col block for each image) === -->
       <div class="col isotope-item filter-MatLab">
         <div class="portfolio-card">
           <div class="portfolio-image-container">
@@ -985,8 +998,8 @@
         </div>
       </div>
       
-    </div><!-- /.row -->
-  </div><!-- /.isotope-layout -->
+    </div>
+  </div>
 
   <div class="portfolio-bottom" data-aos="fade-up" data-aos-delay="400">
     <div class="row align-items-center">
@@ -1001,7 +1014,7 @@
 
 
 
-    </section><!-- /Portfolio Section -->
+    </section>
 
   </main>
 
