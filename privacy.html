@@ -304,24 +304,56 @@
               <!-- Contact Section -->
               <div class="policy-contact" id="contact" data-aos="fade-up" data-aos-delay="200">
                 <div class="contact-card">
-                  <h2>Need Help?</h2>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium:</p>
-                  <div class="contact-info">
-                    <div class="info-item">
-                      <i class="bi bi-envelope"></i>
-                      <div>
-                        <strong>Email Address</strong>
-                        <span>privacy@example.com</span>
+                  <h2>Kontaktai / Susisiekite</h2>
+                  <p>Užpildykite žemiau esančią formą, kad susisiekėtume su jumis.</p>
+
+                  <form id="contact-form" class="contact-form" novalidate>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="firstName">Vardas</label>
+                        <input id="firstName" name="firstName" class="form-control" type="text" required />
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="lastName">Pavardė</label>
+                        <input id="lastName" name="lastName" class="form-control" type="text" required />
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="email">El. paštas</label>
+                        <input id="email" name="email" class="form-control" type="email" required />
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="phone">Telefonas</label>
+                        <input id="phone" name="phone" class="form-control" type="tel" pattern="[+0-9()\-\s]{6,}" />
+                      </div>
+                      <div class="col-12 mb-3">
+                        <label for="address">Adresas</label>
+                        <input id="address" name="address" class="form-control" type="text" />
+                      </div>
+
+                      <!-- Trys klausimai įvertinimui (skalė 1-10) -->
+                      <div class="col-12 mb-2"><h4>Įvertinkite (1–10)</h4></div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="rating1">Paslaugų kokybė <span id="rating1-val" class="rating-val">5</span></label>
+                        <input id="rating1" name="rating1" type="range" min="1" max="10" value="5" class="form-range rating-input" />
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="rating2">Komunikacija <span id="rating2-val" class="rating-val">5</span></label>
+                        <input id="rating2" name="rating2" type="range" min="1" max="10" value="5" class="form-range rating-input" />
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="rating3">Laiku atlikimas <span id="rating3-val" class="rating-val">5</span></label>
+                        <input id="rating3" name="rating3" type="range" min="1" max="10" value="5" class="form-range rating-input" />
+                      </div>
+
+                      <div class="col-12 mt-3">
+                        <button type="submit" class="btn-getstarted">Submit</button>
                       </div>
                     </div>
-                    <div class="info-item">
-                      <i class="bi bi-geo-alt"></i>
-                      <div>
-                        <strong>Office Location</strong>
-                        <span>742 Evergreen Terrace, Springfield, IL 62701</span>
-                      </div>
-                    </div>
-                  </div>
+                  </form>
+
+                  <div id="contact-result" class="contact-result mt-4" aria-live="polite"></div>
+
                 </div>
               </div>
 
@@ -403,8 +435,7 @@
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+  <!-- Preloader removed (only one preloader kept in index.html) -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -419,6 +450,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 

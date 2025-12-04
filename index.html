@@ -439,6 +439,62 @@
 
     </section>
 
+    <!-- Kontaktai -->
+    <section id="contact" class="contact section">
+      <div class="container">
+        <div class="section-title fade-in" data-aos="fade-up">
+          <span class="subtitle">Kontaktai</span>
+          <h2>Susisiekite su manim</h2>
+        </div>
+
+        <form id="contactForm" class="contact-form" data-aos="fade-up">
+          <div class="form-group">
+            <label for="vardas">Vardas:</label>
+            <input type="text" id="vardas" name="vardas" required>
+          </div>
+
+          <div class="form-group">
+            <label for="pavarde">Pavardė:</label>
+            <input type="text" id="pavarde" name="pavarde" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">El. paštas:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefonas:</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="address">Adresas:</label>
+            <input type="text" id="address" name="address">
+          </div>
+
+          <div class="form-group">
+            <label for="rating1">Ar jus sudomino teikiamos paslaugos? (1-10): <span id="rating1Value">5</span></label>
+            <input type="range" id="rating1" name="rating1" min="1" max="10" value="5">
+          </div>
+
+          <div class="form-group">
+            <label for="rating2">Kokia tikimybė, kad pasirinksite šias paslaugas? (1-10): <span id="rating2Value">5</span></label>
+            <input type="range" id="rating2" name="rating2" min="1" max="10" value="5">
+          </div>
+
+          <div class="form-group">
+            <label for="rating3">Ar norėtumėte bendradarbiauti? (1-10): <span id="rating3Value">5</span></label>
+            <input type="range" id="rating3" name="rating3" min="1" max="10" value="5">
+          </div>
+
+          <button type="submit" class="btn-submit">Siųsti</button>
+        </form>
+
+        <div id="formResult"></div>
+      </div>
+    </section>
+
     <!-- Portfelis -->
     <section id="portfolio" class="portfolio section">
 
@@ -1098,8 +1154,9 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
+  <!-- JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 
