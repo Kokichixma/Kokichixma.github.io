@@ -570,3 +570,28 @@ ol ul li {
     animation: none;
   }
 }
+
+/* Memory Game styles */
+.memory { padding-top: 60px; padding-bottom: 60px; }
+.memory-controls { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:18px; }
+.memory-stats { margin-left: 12px; display:flex; gap:12px; align-items:center; color: #f2ecf5; }
+.memory-board-wrap { display:flex; justify-content:center; }
+.memory-board { display:grid; gap:12px; width:100%; max-width:980px; }
+.memory-card { width:100%; cursor:pointer; perspective:1000px; }
+.card-inner { position:relative; width:100%; padding-top:100%; transform-style:preserve-3d; transition: transform 0.6s; }
+.card-inner.is-flipped { transform: rotateY(180deg); }
+.card-face { position:absolute; inset:0; backface-visibility:hidden; display:flex; align-items:center; justify-content:center; font-size:2rem; border-radius:8px; }
+.card-front { background: linear-gradient(135deg,#7d65b3,#b44aa0); color:#fff; }
+.card-back { background: #fff; color:#222; transform: rotateY(180deg); border:2px solid rgba(125,101,179,0.12); }
+.memory-board[data-cols="4"] { grid-template-columns: repeat(4, 1fr); }
+.memory-board[data-cols="6"] { grid-template-columns: repeat(6, 1fr); }
+.memory-card.matched .card-inner { opacity: 0.5; pointer-events:none; }
+.memory-win { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background: rgba(0,0,0,0.6); z-index:99999; visibility:hidden; opacity:0; transition:opacity .2s; }
+.memory-win[aria-hidden="false"] { visibility:visible; opacity:1; }
+.memory-win-inner { background:#111; padding:24px 28px; border-radius:10px; color:#fff; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.6); }
+.memory-win-inner h3 { color:#ffb899; margin-bottom:6px; }
+
+@media (max-width:720px) {
+  .memory-board { gap:8px; }
+  .card-face { font-size:1.4rem; }
+}

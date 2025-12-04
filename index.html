@@ -494,6 +494,48 @@
         <div id="formResult"></div>
       </div>
     </section>
+    </section>
+
+    <!-- Mano Žaidimas (Flip Card Memory) -->
+    <section id="memory-game" class="memory section">
+      <div class="container">
+        <div class="section-title fade-in" data-aos="fade-up">
+          <span class="subtitle">Mano Žaidimas</span>
+          <h2>Flip Card Memory</h2>
+        </div>
+
+        <div class="memory-controls" data-aos="fade-up" data-aos-delay="100">
+          <label for="difficulty">Sunkumas:</label>
+          <select id="difficulty">
+            <option value="easy">Lengvas (4×3)</option>
+            <option value="hard">Sunkus (6×4)</option>
+          </select>
+          <button id="btnStart" class="btn-getstarted">Start</button>
+          <button id="btnReset" class="btn-getstarted">Atnaujinti</button>
+
+          <div class="memory-stats">
+            <span>Bandymai: <strong id="moves">0</strong></span>
+            <span>Sutapę porų: <strong id="matches">0</strong></span>
+            <span>Laikas: <strong id="timer">00:00</strong></span>
+            <span>Geriausias (Lengvas): <strong id="best-easy">—</strong></span>
+            <span>Geriausias (Sunkus): <strong id="best-hard">—</strong></span>
+          </div>
+        </div>
+
+        <div class="memory-board-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div id="memoryBoard" class="memory-board" aria-live="polite"></div>
+        </div>
+
+        <div id="winPopup" class="memory-win" aria-hidden="true">
+          <div class="memory-win-inner">
+            <h3>Laimejote!</h3>
+            <p id="winText"></p>
+            <button id="btnPlayAgain" class="btn-getstarted">Žaisti dar kartą</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- Portfelis -->
     <section id="portfolio" class="portfolio section">
@@ -1157,6 +1199,7 @@
   <!-- JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/memory.js"></script>
 
 </body>
 
