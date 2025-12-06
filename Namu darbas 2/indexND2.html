@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimetras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MULTIMETRAS</h1>
+            <p style="color: #999;">Matavimo įrankis</p>
+        </div>
+
+        <div class="display">
+            <div class="display-screen" id="display">U = I × R</div>
+            <div class="mode-display" id="modeDisplay">Režimas: Skaičiavimas</div>
+        </div>
+
+        <div class="mode-selector">
+            <button class="mode-btn active" onclick="switchMode('calculator')">Skaičiuotuvas</button>
+            <button class="mode-btn" onclick="switchMode('voltage')">Įtampos skaičiavimas</button>
+            <button class="mode-btn" onclick="switchMode('resistance')">Varžos skaičiavimas</button>
+            <button class="mode-btn" onclick="switchMode('current')">Srovės skaičiavimas</button>
+        </div>
+
+        <!-- skaičiuotuvas -->
+        <div id="calculator-mode">
+            <div class="buttons-grid">
+                <button class="btn clear" onclick="clearDisplay()">C</button>
+                <button class="btn operator" onclick="appendOperator('/')">÷</button>
+                <button class="btn operator" onclick="appendOperator('*')">×</button>
+
+                <button class="btn number" onclick="appendNumber('7')">7</button>
+                <button class="btn number" onclick="appendNumber('8')">8</button>
+                <button class="btn number" onclick="appendNumber('9')">9</button>
+                <button class="btn operator" onclick="appendOperator('-')">−</button>
+
+                <button class="btn number" onclick="appendNumber('4')">4</button>
+                <button class="btn number" onclick="appendNumber('5')">5</button>
+                <button class="btn number" onclick="appendNumber('6')">6</button>
+                <button class="btn operator" onclick="appendOperator('+')">+</button>
+
+                <button class="btn number" onclick="appendNumber('1')">1</button>
+                <button class="btn number" onclick="appendNumber('2')">2</button>
+                <button class="btn number" onclick="appendNumber('3')">3</button>
+                <button class="btn operator" onclick="toggleSign()">&plusmn;</button>
+
+                <button class="btn number" onclick="appendNumber('0')">0</button>
+                <button class="btn number" onclick="appendNumber('.')">.</button>
+                <button class="btn equals" onclick="calculate()">=</button>
+            </div>
+        </div>
+
+        <!-- įtampa -->
+        <div id="voltage-mode" style="display: none;">
+            <div class="input-section">
+                <label class="input-label">Įtampos skaičiavimas pagal Omo dėsnį</label>
+                <div class="input-group">
+                    <input type="number" id="voltageInput" placeholder="Srovė (A)" step="0.001">
+                    <input type="number" id="voltageResistance" placeholder="Varža (Ω)" step="0.1">
+                </div>
+                <button class="btn operator" style="width: 100%; margin-bottom: 10px;" onclick="calculateVoltage()">Skaičiuoti įtampą</button>
+            </div>
+            <div class="result-box" id="voltageResult" style="display: none;">
+                <div class="result-label">Įtampa (Voltai):</div>
+                <div class="result-value" id="voltageResultValue">0 V</div>
+            </div>
+        </div>
+
+        <!-- varža -->
+        <div id="resistance-mode" style="display: none;">
+            <div class="input-section">
+                <label class="input-label">Varžos skaičiavimas pagal Omo dėsnį</label>
+                <div class="input-group">
+                    <input type="number" id="voltageForResistance" placeholder="Įtampa (V)" step="0.1">
+                    <input type="number" id="currentForResistance" placeholder="Srovė (A)" step="0.001">
+                </div>
+                <button class="btn operator" style="width: 100%; margin-bottom: 10px;" onclick="calculateResistance()">Skaičiuoti varžą</button>
+            </div>
+            <div class="result-box" id="resistanceResult" style="display: none;">
+                <div class="result-label">Varža (Omai):</div>
+                <div class="result-value" id="resistanceResultValue">0 Ω</div>
+            </div>
+        </div>
+
+        <!-- srovė -->
+        <div id="current-mode" style="display: none;">
+            <div class="input-section">
+                <label class="input-label">Srovės skaičiavimas pagal Omo dėsnį</label>
+                <div class="input-group">
+                    <input type="number" id="voltageForCurrent" placeholder="Įtampa (V)" step="0.1">
+                    <input type="number" id="resistanceForCurrent" placeholder="Varža (Ω)" step="0.1">
+                </div>
+                <button class="btn operator" style="width: 100%; margin-bottom: 10px;" onclick="calculateCurrentDirect()">Skaičiuoti srovę</button>
+            </div>
+            <div class="result-box" id="currentResult" style="display: none;">
+                <div class="result-label">Srovė (Amperas):</div>
+                <div class="result-value" id="currentResultValue">0 A</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <strong>Omo dėsnis:</strong> U = I × R<br>
+            <strong>Galia:</strong> P = U × I<br>
+            <strong>Varža:</strong> R = U / I<br>
+            <strong>Srovė:</strong> I = U / R
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
